@@ -1,0 +1,295 @@
+body{
+  background-color:orange;
+  font-family: "Comic Sans MS";
+  overflow:hidden;
+}
+.grid {
+  display: grid;
+  margin-top:-1%;
+
+  top:-5%;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: repeat(3, 100px);
+  /*  grid-gap: 1em; */
+  background-color:yellow;
+  height:95%;
+  border-bottom-radius:25px;
+  z-index:5;
+}
+form-sewction{
+overflow-y:auto;
+}
+
+header, footer {
+  text-align:center;
+  grid-column: 1 / 4;
+  z-index:2;
+}
+
+header {
+  background-image: linear-gradient(orange, yellow);
+  display:inline;
+}
+
+aside {
+  height:85%;
+  bottom:0;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+
+footer {
+  bottom:0;
+  margin-bottom:0;
+  padding-bottom:0;
+/*  margin-bottom:-9%; */
+  width:98.5%;
+  background-color:yellow;
+  display:inline;
+  position:absolute;
+  border-top-left-radius:25px;
+  border-top-right-radius:25px;
+}
+
+article {
+  height:480%;
+  width:85%;
+  margin-left:8%;
+/*  background-color:  #c7a317; 
+  border-radius:25px; */
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width:.5em;
+  border-color:#ba8834;
+  background-image: linear-gradient(-90deg, yellow, #c7a317, #c7a317, #c7a317, yellow);
+}
+@media only screen and (max-height: 550px) {
+    article {
+      height:300%;
+/*      position:absolute; */
+    }
+  }
+
+ @media only screen and (max-device-width: 480px) {
+  article {
+   margin-top:5%;
+   height:85%;
+  position:absolute;
+  }
+  aside {
+     position:absolute;
+     padding-left:7%;
+  }
+  footer{
+     position:absolute;
+  }
+}
+
+hdr {
+  background-color:orange;
+  background-image: linear-gradient(orange, yellow);
+  width:100%;
+  weight:100%;
+  display:inline;
+  z-index:3;
+
+}
+
+mbar {
+  padding:1em;
+  border-radius:25px;
+  display:inline;
+  margin:auto;
+  text-align:center;
+  background-color:#c7a317;
+  text-shadow: 2px 4px orange;
+  font-weight: 900;
+}
+
+
+mbar:hover {
+  text-shadow: 2px 4px yellow;
+}
+
+mbar:active {
+  color:orange;
+  text-shadow: 2px 4px black;
+}
+
+
+mbr {
+  border-radius:25px;
+  text-align:center;
+  background-color:#c7a317;
+  padding:1em;
+  border-bottom-style: solid;
+  border-width:.5em;
+  border-color:#ba8834;
+}
+
+menu {
+  display:inline;
+  padding-top:5%;
+}
+
+ttl {
+  display:inline;
+  text-shadow: 2px 4px #c7a317;
+  font-weight: 900;
+  top: 0%;
+  margin-top: 0%;
+  padding-top:5%%;
+  background-color:orange;
+}
+
+.cbar {
+  height: 150%;
+  overflow:hidden;
+  display:inline;
+}
+
+#bar {
+  height:100%;
+  backgrou-color:green;
+}
+
+
+.fade {
+    -webkit-animation: fadeinout 8s linear forwards;
+    animation: fadeinout 8s linear forwards;
+}
+
+@-webkit-keyframes fadeinout { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeinout    { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeinout         { from { opacity:0; } to { opacity:1; } }
+
+
+
+.fades {
+  position: relative;
+  display:inline;
+  width: 100%;
+  min-height: 60vh;
+  top: -25px;
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 300%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 99999px;
+  transform-origin: 10% 100%;
+  animation: crawl 220s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+    0% {
+    top: -100px;
+    transform: rotateX(1deg)  translateZ(0);
+  }
+    100% { 
+    top: -10000px;
+    transform: rotateX(5deg) translateZ(-750px);
+  }
+}
+
+
+
+/*cat1, cat2, cat3, cat4, cat5, kit1, kit2, kit3, path {
+  overflow:hidden;
+
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-delay: 6s;
+
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out;
+} */
+
+msc {
+  display: inline;
+  top:5%;
+  left:5%;
+  width:5%;
+  height:5%;
+  position:absolute;
+}
+
+
+about{
+  overflow:hidden;
+}
+home{
+  overflow:hidden;
+}
+ulthar{
+  overflow:hidden;
+}
+photos{
+overflow:hidden;
+}
+involv{
+overflow-y:auto;
+}
+
+.plz{
+  display:inline;
+  position:absolute;
+}
+
+cntr {
+  text-align:center;
+  left: -30%;
+  margin-left:-30%;
+  padding-left:-30%;
+  width:50%;
+  display:inline;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width:30%;
+  height:auto;
+}
+

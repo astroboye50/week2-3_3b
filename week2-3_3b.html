@@ -1,0 +1,443 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/33b.css">
+  <title>Week 1,  3.3b - Grail Site Layout</title>
+</head>
+<body>
+
+<script src="js/33b.js"></script> <!-- import svgs -->
+
+<script>
+
+  function tgl( oid ) {
+     <!-- toggles old/new menu tab -->
+     console.log("peep");
+
+     var msel = document.getElementById( 'selm' );  <!-- previously selected -->
+     var hide = msel.value;
+
+     var oldbtn = document.getElementById( (hide + "btn") );
+     var newbtn = document.getElementById( (oid  + "btn") );
+
+     <!-- toggle article visibility -->
+     document.getElementById( hide ).setAttribute("style", "display:none;");
+     document.getElementById( oid  ).setAttribute("style", "display:inline;overflow-y:scroll;");
+
+     <!-- toggle menu selected highlight -->
+     oldbtn.setAttribute("style", "text-shadow:2px 4px orange;color:black;");
+     newbtn.setAttribute("style", "text-shadow:2px 4px black;color:yellow;");
+
+     msel.value = oid;
+  }
+
+  function tglply() {
+     <!-- toggles play icon -->
+
+     console.log("poop");
+     var ply = document.getElementById( 'plz' );
+
+     if( ply.value == 'pause' ) {
+        <!-- then play, checked by event listener -->
+        ply.value = "play";
+        console.log("playing");
+        ply.innerHTML = "&#9611;&#9611;"
+
+     } else {
+        <!-- then pause -->
+
+        ply.value = "pause";
+        console.log("pausing");
+        ply.innerHTML = "&#9658";
+     }
+  }
+
+</script>
+    <div class="grid">
+<header><hdr>
+<ttl>KITTENS</ttl> <!-- bad uncomplete quote <msc> -->
+
+
+<svg style="width:7%;height:7%;display:inline-block;position:absolute;right:0;top:0;"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="32mm"
+   height="32mm"
+   viewBox="0 0 32 32"
+   version="1.1" >
+   <g transform="translate(0,-265)">
+    <path
+       style="fill:#ff6600;stroke-width:0.21953762;"
+       d="m 6.0683137,297.37218 c -1.1700501,-1.47103 -0.9722733,-3.49531 0.5326419,-5.45164 1.1658781,-1.5156 2.0987233,-1.98026 3.7549064,-1.87036 1.668138,0.1107 2.748891,0.8803 3.793804,2.70155 0.618791,1.07853 0.670691,1.30496 0.59263,2.58544 -0.07404,1.21468 -0.172476,1.49459 -0.732023,2.08177 -0.710527,0.7456 -1.544953,0.87861 -2.165997,0.34528 -0.332483,-0.28553 -0.44572,-0.28553 -0.792818,0 -0.50117,0.41226 -1.4037215,0.42994 -1.938162,0.0379 -0.3202911,-0.23491 -0.484525,-0.23491 -0.8048161,0 -0.7234607,0.53063 -1.6117168,0.36013 -2.2401662,-0.42998 z m 11.7493093,0.42018 c -1.061428,-0.98233 -1.327253,-3.01349 -0.610373,-4.66381 0.461119,-1.06154 1.630075,-2.3303 2.57357,-2.79328 0.855215,-0.41966 2.52981,-0.41966 3.385025,0 2.788466,1.36834 3.972376,5.54214 2.082124,7.34041 -0.524381,0.49886 -1.531098,0.54214 -2.059297,0.0885 -0.332484,-0.28553 -0.44572,-0.28553 -0.79282,0 -0.222714,0.18321 -0.637848,0.33311 -0.922519,0.33311 -0.284672,0 -0.699806,-0.1499 -0.922521,-0.33311 -0.3471,-0.28553 -0.460335,-0.28553 -0.792819,0 -0.47372,0.40681 -1.514888,0.42192 -1.94037,0.0281 z M 4.1866354,291.03913 c -0.3529865,-0.41456 -0.03816,-1.1856 1.0121477,-2.47882 0.6309599,-0.77689 1.5424,-1.70573 2.0254224,-2.0641 0.4830223,-0.35838 0.8783851,-0.71529 0.8785851,-0.79315 1.992e-4,-0.0779 -0.1699132,-0.32254 -0.378027,-0.54374 -0.3562291,-0.37862 -0.44817,-0.37166 -1.5699826,0.11884 -1.3982019,0.61134 -1.8695083,0.9365 -3.1702987,2.18724 -0.7946661,0.7641 -1.0190262,0.87679 -1.2661156,0.63595 -0.4472573,-0.43595 -0.3707672,-0.77597 0.3580758,-1.5918 0.9177995,-1.02735 2.4612538,-2.12571 3.6251413,-2.57972 1.0720659,-0.41819 1.1233025,-0.50579 0.6966734,-1.19101 -0.2785193,-0.44736 -0.3339578,-0.44928 -1.9097118,-0.0667 -0.8925767,0.21676 -2.169854,0.68241 -2.8383952,1.03476 -1.27486617,0.67193 -1.650136957143,0.63803 -1.650136957143,-0.14909 0,-0.6485 2.123508357143,-1.79764 4.216933557143,-2.28202 l 1.6022524,-0.37071 -0.3092862,-1.09902 c -0.4179152,-1.48499 -0.4588684,-7.94228 -0.062049,-9.78295 0.3286916,-1.52465 1.1015665,-3.68011 1.3962541,-3.894 0.3591056,-0.26066 2.6452925,1.93887 3.6143699,3.47735 0.564122,0.8956 1.067718,1.46602 1.265874,1.43385 0.180988,-0.0294 0.87603,-0.16239 1.544539,-0.29559 1.699413,-0.33861 3.605767,-0.29803 5.253066,0.11181 0.772241,0.19213 1.418382,0.3241 1.435867,0.29326 1.329739,-2.34511 2.778444,-4.10504 3.979598,-4.83453 0.563285,-0.3421 0.566538,-0.33954 1.078723,0.84752 0.82619,1.91483 1.150686,4.05149 1.157047,7.61866 0.005,2.83476 -0.159788,4.55805 -0.550343,5.75335 -0.09508,0.291 0.124185,0.39196 1.11556,0.51365 1.341897,0.16473 3.979221,1.12229 4.77268,1.73288 0.54251,0.41747 0.662563,1.21887 0.21295,1.4215 -0.155848,0.0703 -0.74664,-0.14801 -1.312877,-0.48501 -1.236755,-0.73603 -3.218169,-1.31471 -4.518109,-1.31953 -0.783607,-0.003 -0.971806,0.0823 -1.082035,0.49025 -0.159648,0.59075 -0.213617,0.53685 0.916449,0.91528 2.187466,0.73253 4.861885,2.83376 4.861885,3.81989 0,0.80643 -0.619159,0.76222 -1.434034,-0.10234 -1.726519,-1.83191 -5.656215,-3.43105 -5.656215,-2.30174 0,0.12247 0.494987,0.55076 1.099972,0.95176 1.473102,0.97639 2.453659,2.01963 3.082182,3.27921 0.421774,0.84525 0.473134,1.10927 0.271316,1.39486 -0.410022,0.58023 -0.717491,0.40967 -1.334771,-0.74043 -0.638759,-1.19011 -1.961521,-2.44832 -3.33095,-3.1684 l -0.871314,-0.45815 -0.623044,0.54809 c -3.176127,2.79392 -8.279402,2.9782 -11.740295,0.42394 -0.784651,-0.5791 -0.7869202,-0.57931 -1.6206286,-0.14456 -0.459183,0.23945 -1.4928416,1.21306 -2.2970201,2.16358 -1.4334387,1.69427 -1.675611,1.88941 -1.9479286,1.56959 z"  /> </g>
+</svg><br><br>
+
+
+    <mbr><menu>
+      <mbar id="plz" value="pause" onclick="tglply();">&#9658</mbar>
+      <mbar id="homebtn"   onclick="tgl('home');"  style="text-shadow:2px 4px black;color:yellow;">HOME</mbar>
+      <mbar id="aboutbtn"  onclick="tgl('about');" >ABOUT</mbar>
+      <mbar id="ultharbtn" onclick="tgl('ulthar');">ULTHAR</mbar>
+      <mbar id="photobtn"  onclick="tgl('photo');" >PHOTOS</mbar>
+      <mbar id="involvbtn" onclick="tgl('involv');">GET INVOLVED</mbar>
+    </menu></mbr>
+
+  </hdr></header>
+
+  <aside class="sidebar-left">
+      &nbsp;
+  </aside>
+
+  <article>
+     <home   id="home"   style="display:inline;">
+
+<div class="fades"></div>
+
+<section class="star-wars">
+  <div class="crawl">
+    <div class="title">
+      <p>Episode K</p>
+      <h1>KITTEN WARS</h1>
+    </div>
+    
+    <p>A long time ago, in a place we now call home kittens ruled the world.  They did not ask for anything from the world except fish and in return they were left alone to play, as they prefer.   Then the darkness came.</p>
+      
+      <p>The Dark Ones believed that they where a far superior race, and that they had a right to assert dominion over all aspects of life on earth.  They where convinced that the suffering of lesser races was justifiable so long as it served their purpose.  The Greater Good They Called it as Manifest Destiny had been taken.</p>
+
+    <p>So they went about enslaving all   the lesser creatures of the world.  Branding them with irons, poking them with needles, Dressing them as play things.  Children where strictly prohibited as well as any other choice of free will not made by them.</p>
+
+    <p>When they grew tired of their playthings they would execute them, burned in ovens, and buried in mass graves.  After the war this group came to be known as The Marin Humane Society.  Funded directly by the Young Urban Professionals they seemed unstoppable.</p>
+  </div>
+</section>
+
+     </home>
+     <about  id="about"  style="display:none;">
+      
+<section class="star-wars">
+  <div class="crawl">
+<p>Have you put your tax dollars to work this year?</p>
+
+<p>It was once considered common practice to enslave lesser races.  To mutilate them so they couldn’t reproduce.  To kill them when convenient.  Now days humans are spared as a lesser race but that could change.  We could get invaded by a superior race of kittens from outer space.  They could decide that we are not competent enough to look after ourselves.  To have children without permission.  To decide when it was our time to go.  Why not?  We still do this today.  Is it that hard to imagine some one bigger than us would do it as well.</p>
+
+<p>There is no better time to be that bigger person.  Thousands of your tax paying dollars go to killing cute and cuddly kittens every year.  Their crime?  Living too close to humans.  Yes we can speculate what is better, quality of life… how most animals would prefer to live half their allotted time just so we can feed them cheap food.  It is my only hope that one day another passes such judgment on you.  As only ignorance is bread from ethnocentrisms.  What you want has nothing to do with the life of another animal, even a ugly one.</p><p>  Stop funding the Marin Humane Society.  Stop neutering animals.  Try taking care of what is in front of you and if you can’t, don’t take it out on the animal just because you aren’t responsible enough to have kids.   One day some thing else may take it out on you.</p>
+</div></section>
+     </about>
+
+     <ulthar id="ulthar" style="display:none;">
+<section class="star-wars">
+  <div class="crawl">
+
+<p>It is said that in Ulthar, which lies beyond the river Skai, no man may kill a cat; and this I can verily believe as I gaze upon him who sitteth purring before the fire. For the cat is cryptic, and close to strange things which men cannot see. He is the soul of antique Aegyptus, and bearer of tales from forgotten cities in Meroe and Ophir. He is the kin of the jungle's lords, and heir to the secrets of hoary and sinister Africa. The Sphinx is his cousin, and he speaks her language; but he is more ancient than the Sphinx, and remembers that which she hath forgotten.</p>
+
+<p>In Ulthar, before ever the burgesses forbade the killing of cats, there dwelt an old cotter and his wife who delighted to trap and slay the cats of their neighbors. Why they did this I know not; save that many hate the voice of the cat in the night, and take it ill that cats should run stealthily about yards and gardens at twilight. But whatever the reason, this old man and woman took pleasure in trapping and slaying every cat which came near to their hovel; and from some of the sounds heard after dark, many villagers fancied that the manner of slaying was exceedingly peculiar. But the villagers did not discuss such things with the old man and his wife; because of the habitual expression on the withered faces of the two, and because their cottage was so small and so darkly hidden under spreading oaks at the back of a neglected yard. In truth, much as the owners of cats hated these odd folk, they feared them more; and instead of berating them as brutal assassins, merely took care that no cherished pet or mouser should stray toward the remote hovel under the dark trees. When through some unavoidable oversight a cat was missed, and sounds heard after dark, the loser would lament impotently; or console himself by thanking Fate that it was not one of his children who had thus vanished. For the people of Ulthar were simple, and knew not whence it is all cats first came.</p>
+
+<p>One day a caravan of strange wanderers from the South entered the narrow cobbled streets of Ulthar. Dark wanderers they were, and unlike the other roving folk who passed through the village twice every year. In the market-place they told fortunes for silver, and bought gay beads from the merchants. What was the land of these wanderers none could tell; but it was seen that they were given to strange prayers, and that they had painted on the sides of their wagons strange figures with human bodies and the heads of cats, hawks, rams and lions. And the leader of the caravan wore a headdress with two horns and a curious disk betwixt the horns.</p>
+
+<p>There was in this singular caravan a little boy with no father or mother, but only a tiny black kitten to cherish. The plague had not been kind to him, yet had left him this small furry thing to mitigate his sorrow; and when one is very young, one can find great relief in the lively antics of a black kitten. So the boy whom the dark people called Menes smiled more often than he wept as he sat playing with his graceful kitten on the steps of an oddly painted wagon.</p>
+
+<p>On the third morning of the wanderers' stay in Ulthar, Menes could not find his kitten; and as he sobbed aloud in the market-place certain villagers told him of the old man and his wife, and of sounds heard in the night. And when he heard these things his sobbing gave place to meditation, and finally to prayer. He stretched out his arms toward the sun and prayed in a tongue no villager could understand; though indeed the villagers did not try very hard to understand, since their attention was mostly taken up by the sky and the odd shapes the clouds were assuming. It was very peculiar, but as the little boy uttered his petition there seemed to form overhead the shadowy, nebulous figures of exotic things; of hybrid creatures crowned with horn-flanked disks. Nature is full of such illusions to impress the imaginative.</p>
+
+<p>That night the wanderers left Ulthar, and were never seen again. And the householders were troubled when they noticed that in all the village there was not a cat to be found. From each hearth the familiar cat had vanished; cats large and small, black, grey, striped, yellow and white. Old Kranon, the burgomaster, swore that the dark folk had taken the cats away in revenge for the killing of Menes' kitten; and cursed the caravan and the little boy. But Nith, the lean notary, declared that the old cotter and his wife were more likely persons to suspect; for their hatred of cats was notorious and increasingly bold. Still, no one durst complain to the sinister couple; even when little Atal, the innkeeper's son, vowed that he had at twilight seen all the cats of Ulthar in that accursed yard under the trees, pacing very slowly and solemnly in a circle around the cottage, two abreast, as if in performance of some unheard-of rite of beasts. The villagers did not know how much to believe from so small a boy; and though they feared that the evil pair had charmed the cats to their death, they preferred not to chide the old cotter till they met him outside his dark and repellent yard.</p>
+
+<p>So Ulthar went to sleep in vain anger; and when the people awakened at dawn - behold! every cat was back at his accustomed hearth! Large and small, black, grey, striped, yellow and white, none was missing. Very sleek and fat did the cats appear, and sonorous with purring content. The citizens talked with one another of the affair, and marveled not a little. Old Kranon again insisted that it was the dark folk who had taken them, since cats did not return alive from the cottage of the ancient man and his wife. But all agreed on one thing: that the refusal of all the cats to eat their portions of meat or drink their saucers of milk was exceedingly curious. And for two whole days the sleek, lazy cats of Ulthar would touch no food, but only doze by the fire or in the sun.</p>
+
+<p>It was fully a week before the villagers noticed that no lights were appearing at dusk in the windows of the cottage under the trees. Then the lean Nith remarked that no one had seen the old man or his wife since the night the cats were away. In another week the burgomaster decided to overcome his fears and call at the strangely silent dwelling as a matter of duty, though in so doing he was careful to take with him Shang the blacksmith and Thul the cutter of stone as witnesses. And when they had broken down the frail door they found only this: two cleanly picked human skeletons on the earthen floor, and a number of singular beetles crawling in the shadowy corners.</p>
+
+<p>There was subsequently much talk among the burgesses of Ulthar. Zath, the coroner, disputed at length with Nith, the lean notary; and Kranon and Shang and Thul were overwhelmed with questions. Even little Atal, the innkeeper's son, was closely questioned and given a sweetmeat as reward. They talked of the old cotter and his wife, of the caravan of dark wanderers, of small Menes and his black kitten, of the prayer of Menes and of the sky during that prayer, of the doings of the cats on the night the caravan left, and of what was later found in the cottage under the dark trees in the repellent yard.</p>
+
+<p>And in the end the burgesses passed that remarkable law which is told of by traders in Hatheg and discussed by travelers in Nir; namely, that in Ulthar no man may kill a cat.</p>
+</div>
+</section>
+
+
+     </ulthar>
+     <photo  id="photo"  style="display:none;">
+       Photos
+
+<section class="star-wars">
+  <div class="crawl">
+
+<div class="row">
+  <div class="column">
+    <img src="https://i.imgur.com/pGdlcNr.jpg">
+    <img src="https://i.imgur.com/H02Za4L.jpg">
+    <img src="https://i.imgur.com/nhdgeHF.jpg">
+    <img src="https://i.imgur.com/hu1q1qQ.jpg">
+    <img src="https://i.imgur.com/pJ7pES0.jpg">
+    <img src="https://i.imgur.com/r1LZ80H.jpg">
+    <img src="https://i.imgur.com/pqEQMMI.jpg">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/aRUb5LC.jpg">
+    <img src="https://i.imgur.com/gCAr5bl.jpg">
+    <img src="https://i.imgur.com/mMRyzp9.jpg">
+    <img src="https://i.imgur.com/vvV0B8r.jpg">
+    <img src="https://i.imgur.com/2CdPjqy.jpg">
+    <img src="https://i.imgur.com/yC1Lt8x.jpg">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/pGdlcNr.jpg">
+    <img src="https://i.imgur.com/H02Za4L.jpg">
+    <img src="https://i.imgur.com/nhdgeHF.jpg">
+    <img src="https://i.imgur.com/hu1q1qQ.jpg">
+    <img src="https://i.imgur.com/pJ7pES0.jpg">
+    <img src="https://i.imgur.com/r1LZ80H.jpg">
+    <img src="https://i.imgur.com/pqEQMMI.jpg">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/aRUb5LC.jpg">
+    <img src="https://i.imgur.com/gCAr5bl.jpg">
+    <img src="https://i.imgur.com/mMRyzp9.jpg">
+    <img src="https://i.imgur.com/vvV0B8r.jpg">
+    <img src="https://i.imgur.com/2CdPjqy.jpg">
+    <img src="https://i.imgur.com/yC1Lt8x.jpg">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/pGdlcNr.jpg">
+    <img src="https://i.imgur.com/H02Za4L.jpg">
+    <img src="https://i.imgur.com/nhdgeHF.jpg">
+    <img src="https://i.imgur.com/hu1q1qQ.jpg">
+    <img src="https://i.imgur.com/pJ7pES0.jpg">
+    <img src="https://i.imgur.com/r1LZ80H.jpg">
+    <img src="https://i.imgur.com/pqEQMMI.jpg">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/aRUb5LC.jpg">
+    <img src="https://i.imgur.com/gCAr5bl.jpg">
+    <img src="https://i.imgur.com/mMRyzp9.jpg">
+    <img src="https://i.imgur.com/vvV0B8r.jpg">
+    <img src="https://i.imgur.com/2CdPjqy.jpg">
+    <img src="https://i.imgur.com/yC1Lt8x.jpg">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/pGdlcNr.jpg">
+    <img src="https://i.imgur.com/H02Za4L.jpg">
+    <img src="https://i.imgur.com/nhdgeHF.jpg">
+    <img src="https://i.imgur.com/hu1q1qQ.jpg">
+    <img src="https://i.imgur.com/pJ7pES0.jpg">
+    <img src="https://i.imgur.com/r1LZ80H.jpg">
+    <img src="https://i.imgur.com/pqEQMMI.jpg">
+  </div>
+  <div class="column">
+    <img src="https://i.imgur.com/aRUb5LC.jpg">
+    <img src="https://i.imgur.com/gCAr5bl.jpg">
+    <img src="https://i.imgur.com/mMRyzp9.jpg">
+    <img src="https://i.imgur.com/vvV0B8r.jpg">
+    <img src="https://i.imgur.com/2CdPjqy.jpg">
+    <img src="https://i.imgur.com/yC1Lt8x.jpg">
+  </div>
+</div>
+
+</div>
+</section>
+
+     </photo>
+     <involv id="involv" style="display:none;overflow-y:auto;">
+Kittens Need Coffee Too,<br>  Please buy a kitten a cup of coffee today<br>
+<a href="https://form.jotform.com/200424118732142" target="_blank">DONATE</a>
+     </involv>
+  </article>
+
+  <aside class="sidebar-right">
+     &nbsp;
+    <cbar id="cbar">
+       <div id="cat1" class="fade" style="display:none;">
+
+<svg
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="32mm"
+   height="32mm"
+   viewBox="0 0 32 32"
+   version="1.1"
+   style="left:55%">
+   <g transform="translate(0,-265)">
+    <path id="kit1" d="" class="fade"></path></g></svg>
+
+       </div>
+       <div id="cat2" class="fade" style="display:none;">
+
+<svg      
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="32mm"
+   height="32mm"
+   viewBox="0 0 32 32"
+   version="1.1"
+   style="padding-right:15%;margin-right:15%;left:15%;">
+   <g transform="translate(0,-265)">
+    <path id="kit2" d="" class="fade"></path></g></svg>
+
+       </div>
+       <div id="cat3" class="fade" style="display:none;">
+
+<svg      
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="32mm"
+   height="32mm"
+   viewBox="0 0 32 32"
+   version="1.1"
+   style="left:15%">
+   <g transform="translate(0,-265)">
+    <path id="kit3" d="" class="fade"></path></g></svg>
+
+       </div>
+    </cbar>
+  </aside>
+  
+  <footer>
+    Created By:<i> James Bailey</i>
+  </footer>
+</div>
+
+  <input id="selm" type="hidden" value="home"></input>  	<!-- selected menu for tgl() -->
+  <input id="catc" type="hidden" value="0"></input>     	<!-- cats in container -->
+  <input id="lstc" type="hidden" value="1"></input>		<!-- last cat -->
+  <input id="barc" type="hidden" value="0"></input>		<!-- sidebar container count -->
+  <input id="sply" type="hidden" value="0"></input>		<!-- play music -->
+
+  <audio id="angel" src="music/sandy.mp3" loop="loop" muted="muted"></audio>
+
+
+<script>
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+function addcat(){
+
+  <!-- https://stackoverflow.com/questions/40056297/random-number-which-is-not-equal-to-the-previous-number -->
+  function getClr() {
+    var min = 1,
+        max = 2,
+        random;
+
+    do {
+        random = Math.floor(Math.random() * (max - min)) + min;
+    } while (random === getClr.last);
+    getClr.last = random;
+    return random;
+  };
+
+  function getCol() {
+    var min = 1,
+        max = 3,
+        random;
+
+    do {
+        random = Math.floor(Math.random() * (max - min)) + min;
+    } while (random === getCol.last);
+    getCol.last = random;
+    return random;
+  };
+
+  var barc = document.getElementById( "barc" );  	<!-- container count -->
+  var catc = document.getElementById( "catc" );  	<!-- cats in count -->
+  var lstc = document.getElementById( "lstc" );
+
+  var lvl  = lstc.value;
+
+  <!-- build container -->
+  var ccol = getCol();
+  var ccat = lvl;
+  var clr  = getClr();
+
+  console.log("ccol " + ccol);
+  console.log("ccat " + ccat);
+
+
+  var kpth = retkit( ccat );
+  var cat  = "kit" + ccol;
+  var col  = "cat" + ccol;
+  <!-- show -->
+
+  var mrg  = ( +ccol * 80 ) + "%";
+  var sty  = "display:inline;margin-left:-55%;padding-left:-55%;left:-55%;margin-top:" + mrg + ";";
+
+  console.log("cat " + cat);
+
+  var bvl = barc.value;
+  if( bvl > 0 ) {
+    var oid = "cat" + bvl;
+    document.getElementById( oid ).setAttribute("style","display:none;");
+  }
+  barc.value = ccol;
+
+  document.getElementById( col ).setAttribute("style", sty);
+  cat = document.getElementById( cat )
+  cat.setAttribute("d", kpth);
+  if( clr == 1 ) {
+    clr = "#c7a317";
+  } else {
+    clr = "#ff6600";
+  }
+
+  sty = "fill:" + clr;
+
+  cat.setAttribute("style", sty);
+
+  <!-- because math -->
+  if( lvl > 4 ) lvl = 0;
+
+  lvl = +lvl + 1;
+
+  lstc.value = lvl; 
+}
+
+<!-- addcat(); -->
+window.onload = function() {
+  <!-- document.getElementById("angel").play(); -->
+  <!-- return; -->
+  var playPromise;
+  var audio = new Audio('music/sandy.mp3');
+
+  document.addEventListener('click', function(event) {
+    if (1==2) {
+      // Kill the event
+
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // Doing nothing in this method lets the event proceed as normal
+
+    var ply = document.getElementById('sply');
+    var pl2 = document.getElementById('plz');
+
+    console.log("ply " + ply.value);
+    if( ply.value == '0' ) {
+       ply.value = '1';
+       pl2.innerHTML = "&#9611;&#9611;"
+       pl2.value = "pause";
+       playPromise = audio.play();
+    }
+
+    if( pl2.value == "play" ) {
+       pl2.innerHTML = "&#9658";
+       playPromise = audio.pause();
+    }
+
+    if( pl2.value == "pause" ) {
+       pl2.innerHTML = "&#9611;&#9611;"
+       playPromise = audio.play();
+    }
+
+    console.log('pl2 value' + pl2.value);
+  },
+  true  // Enable event capturing!
+);
+      event.preventDefault();
+      event.stopPropagation();
+}
+
+
+setInterval(addcat, 16000);
+
+
+</script>
+
+</body>
+</html>
